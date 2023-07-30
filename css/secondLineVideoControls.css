@@ -1,0 +1,39 @@
+.secondLine {
+    position: fixed;
+    bottom: 36px;
+}
+
+.control_icons {
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.control-imgs {
+    width: 36px;
+    height: 36px;
+}
+
+.control-imgs-sm {
+    width: 24px;
+    height: 24px;
+}
+
+.volumeSeek {
+    position: relative;
+    top: 2px;
+    cursor: pointer;
+    padding: 0 16px;
+    width: 9vw;
+}
+
+.volume-w {
+    min-width: 8vw;
+}
+
+.volumeIndicatorPos {
+    left: calc(0% - 8px);
+}
+
+.volumeLoader {
+    width: 0;
+}

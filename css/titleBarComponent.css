@@ -1,0 +1,20 @@
+.titleBar{
+    position: fixed;
+    top: 0;
+    min-width: 100vw;
+    height: 120px;
+    color: white;
+    background: linear-gradient(rgba(0, 0, 0, 0.74), transparent);
+    transition: all 0.2s;
+    opacity: 0;
+}
+.videoTitle{
+    font-size: 22px;
+}
+.firstTitleBarPart{
+    margin-left: 80px;
+    margin-right: 10px;
+}
+.titleBarOpacity{
+    opacity: 1 !important;
+}

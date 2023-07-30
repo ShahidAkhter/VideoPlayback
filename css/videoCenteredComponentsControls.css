@@ -1,0 +1,31 @@
+.videoCenteredComponents {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+
+.loader_icons {
+    width: 80px;
+    height: 80px;
+    animation: rotateAnimation 1s infinite linear; /* Animation lasts for 1 seconds and repeats infinitely */
+}
+
+.control_icons_loader{
+    width: 400px;
+    height: 400px;
+}
+
+@keyframes rotateAnimation {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+        /* Start position, no rotation */
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+        /* End position, 360 degrees rotation */
+    }
+}

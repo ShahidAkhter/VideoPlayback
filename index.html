@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Playback</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utility.css">
+    <link rel="stylesheet" href="css/titleBarComponent.css">
+    <link rel="stylesheet" href="css/firstLineVideoControls.css">
+    <link rel="stylesheet" href="css/secondLineVideoControls.css">
+    <link rel="stylesheet" href="css/videoCenteredComponentsControls.css">
+</head>
+
+<body>
+    <div class="videoComponent" id="videoComponentID">
+        <div class="titleBar flex f-align-center f-justify-between" id="titleBarID">
+            <div class="firstTitleBarPart f-align-center">
+                <div class="videoTitle" id="videoTitleID">Hello, world!</div>
+            </div>
+        </div>
+
+        <div class="videoPart">
+            <video id="myVideo">
+                <source src="videos/video1.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="videoCenteredComponents flex f-align-center f-justify-center" id="videoMiddleComponent">
+            <div class="control_icons_loader flex f-align-center f-justify-center" id="videoBufferingLoader"><img
+                src="assets\appImgs\loader.svg" class="control-imgs loader_icons" alt="Loader"></div>
+        </div>
+
+        <div class="videoControls flex f-column" id="videoControlsID">
+            <div class="firstLine flex f-align-center f-justify-center">
+                <div class="seekComponent mx-0 flex f-align-center f-justify-center">
+                    <div class="seek flex f-justify-center f-column" id="seekID">
+                        <div class="currentDur" id="currentTiming"></div>
+                        <div class="loadedDur" id="loadedDurTime"></div>
+                        <div class="indicatorCurrentDurPos" id="indicationVideoRunningPoint"></div>
+                        <div class="pitch" id="pitchVideoDur"></div>
+                    </div>
+                    <div class="durRemains">
+                        <div id="durRemainstoWatch">00:00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="secondLine w-0 flex f-align-center f-justify-between text-size-0">
+                <div class="firstSecondPart flex f-align-center f-justify-center">
+                    <div class="flex f-align-center f-justify-center" id="control">
+                        <div class="control_icons flex f-align-center f-justify-center" id="time_backward"><img
+                                src="assets\appImgs\backward.svg" class="control-imgs control-imgs-sm mx-1"
+                                alt="time_backward">10</div>
+
+                        <div class="control_icons flex f-align-center f-justify-center" id="masterPlay"><img
+                                src="assets\appImgs\play-solid.svg" class="control-imgs" alt="Play/Pause"></div>
+
+                        <div class="control_icons flex f-align-center f-justify-center" id="time_forward">10<img
+                                src="assets\appImgs\forward.svg" class="control-imgs control-imgs-sm mx-1"
+                                alt="time_forward"></div>
+                        <div class="volumeComponent f-align-center f-justify-center">
+                            <div class="volumeSeek" id="volumeSeekID">
+                                <div class="currentDur" id="currentVolume"></div>
+                                <div class="loadedDur volumeLoader"></div>
+                                <div class="indicatorCurrentDurPos" id="indicatorCurrentVolPos"></div>
+                                <div class="pitch volume-w" id="pitchVideoVol"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="secondSecondPart">
+                    <div class="control_icons flex f-align-center f-justify-center" id="screen_mode"><img
+                        src="assets\appImgs\full_screen.svg" class="control-imgs control-imgs-sm mx-1"
+                        alt="screen_mode"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/constAndVariables.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/volumes.js"></script>
+    <script src="js/style.js"></script>
+</body>
+
+</html>
