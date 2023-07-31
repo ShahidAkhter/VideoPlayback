@@ -1,19 +1,24 @@
+
+videoBufferingLoader.classList.add('control_animation')
 video.addEventListener('loadedmetadata', () => {
     videoDuration = video.duration;
     document.getElementById('videoTitleID').innerText = getVideoName(video);
     durRemainstoWatch.innerText = timeRemainsToEnd(video.currentTime, videoDuration);
     videoBufferingLoader.style.opacity = 0;
+    videoBufferingLoader.classList.remove('control_animation')
 });
 
 video.addEventListener('waiting', () => {
+    videoBufferingLoader.classList.add('control_animation')
     videoBufferingLoader.style.opacity = 1;
 })
 
 video.addEventListener('playing', () => {
     videoBufferingLoader.style.opacity = 0;
+    videoBufferingLoader.classList.remove('control_animation')
 })
 
-videoMiddleComponent.addEventListener('click',()=>{
+videoMiddleComponent.addEventListener('click', () => {
     masterPlay.click();
 })
 
@@ -47,28 +52,37 @@ seek.addEventListener('click', (event) => {
 });
 
 screenMode.addEventListener('click', () => {
-    if (isFullScreen) {
-        exitFullscreen()
-        screenModeImg.src = fullScreenSVG
-        isFullScreen = false
-    } else {
-        openFullscreen()
-        screenModeImg.src = normalScreenSVG
-        isFullScreen = true
+    try {
+        if (isFullScreen) {
+            exitFullscreen()
+            screenModeImg.src = fullScreenSVG
+            isFullScreen = false
+        } else {
+            openFullscreen()
+            screenModeImg.src = normalScreenSVG
+            isFullScreen = true
+        }
+    } catch (error) {
+        console.log("Some Error Occured " + error)
     }
 });
 
+video.addEventListener('contextmenu', (event) => {
+    event.preventDefault();
+});
 
 window.addEventListener('keydown', (event) => {
-    event.preventDefault();
-    
-    if(event.code === 'KeyF'){
+    if (event.key === 'Escape' || event.key === 'F11') {
+        event.preventDefault();
         screenMode.click();
-    }else if(event.code === 'Space'){
+    }
+    if (event.code === 'KeyF') {
+        screenMode.click();
+    } else if (event.code === 'Space') {
         masterPlay.click();
-    }else if(event.code === 'ArrowLeft'){
+    } else if (event.code === 'ArrowLeft') {
         time_backward.click();
-    }else if(event.code === 'ArrowRight'){
+    } else if (event.code === 'ArrowRight') {
         time_forward.click();
     }
 })

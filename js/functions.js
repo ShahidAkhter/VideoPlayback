@@ -82,24 +82,34 @@ function userEventCurrentDurationTime(event, videoElement, pitch) {
 }
 
 function openFullscreen() {
-    if (videoComponent.requestFullscreen) {
-        videoComponent.requestFullscreen();
-    } else if (videoComponent.webkitRequestFullscreen) { /* Safari */
-        videoComponent.webkitRequestFullscreen();
-    } else if (videoComponent.msRequestFullscreen) { /* IE11 */
-        videoComponent.msRequestFullscreen();
+    try {
+        if (videoComponent.requestFullscreen) {
+            videoComponent.requestFullscreen();
+        } else if (videoComponent.webkitRequestFullscreen) { /* Safari */
+            videoComponent.webkitRequestFullscreen();
+        } else if (videoComponent.msRequestFullscreen) { /* IE11 */
+            videoComponent.msRequestFullscreen();
+        }
+    } catch (error) {
+        console.log("Some Error Occured " + error)
     }
 }
 
 
 function exitFullscreen() {
-    if (document.exitFullscreen) {
-        document.exitFullscreen();
-    } else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen();
-    } else if (document.mozCancelFullScreen) {
-        document.mozCancelFullScreen();
-    } else if (document.msExitFullscreen) {
-        document.msExitFullscreen();
+    try {
+        if (document.fullscreenElement) {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+        }
+    } catch (error) {
+        console.log("Some Error Occured " + error)
     }
 }
