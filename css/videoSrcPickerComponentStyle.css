@@ -1,0 +1,56 @@
+.videoFilePicker{
+    width: 100vw;
+    height: 100vh;
+    /* background: linear-gradient(rgb(102, 143, 233),rgb(150, 144, 238)); */
+    background: rgb(25, 25, 35);
+    color: white;
+    border-color: white;
+}
+
+.upload-box {
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    background: rgb(157, 157, 255);
+    width: 84vmin;
+}
+
+.upload-inner-box {
+    height: 40vmin;
+    width: 80vmin;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.upload-box .upload-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.upload-box .upload-text {
+    font-size: 16px;
+}
+
+#videoFile{
+    display: none;
+}
+
+.upload-box span {
+    border: 1px solid black;
+    border-radius: 10px;
+    background: rgb(8, 49, 136);
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.inputTextLinkComponent{
+    margin-top: 4px;
+}
+.inputTextLink{
+    font-size: 16px;
+    margin: 4px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    background: rgb(232, 232, 255);
+}

@@ -1,3 +1,7 @@
+.displayNone {
+    display: none !important;
+}
+
 .flex {
     display: flex;
 }
@@ -22,6 +26,10 @@
     flex-direction: column;
 }
 
+.f-wrap{
+    flex-wrap: wrap;
+}
+
 .mx-0 {
     margin: 0 4px;
 }
@@ -34,6 +42,19 @@
     width: 96vw;
 }
 
+.w-1 {
+    width: 60vmin;
+}
+
 .text-size-0 {
     font-size: 16px;
+}
+
+.bg-0 {
+    background: rgb(8, 49, 136) !important;
+    color: white;
+}
+
+.cursor-pointer{
+    cursor: pointer;
 }

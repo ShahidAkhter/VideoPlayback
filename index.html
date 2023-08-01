@@ -4,26 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Playback</title>
+    <title>Disney+Hotstar VideoPlayback</title>
+    <link rel="shortcut icon" href="assets/DisneyHotstar.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/utility.css">
     <link rel="stylesheet" href="css/titleBarComponent.css">
     <link rel="stylesheet" href="css/firstLineVideoControls.css">
     <link rel="stylesheet" href="css/secondLineVideoControls.css">
     <link rel="stylesheet" href="css/videoCenteredComponentsControls.css">
+    <link rel="stylesheet" href="css/videoSrcPickerComponentStyle.css">
 </head>
 
 <body>
-    <div class="videoComponent" id="videoComponentID">
+    <div class="videoFilePicker flex f-align-center f-justify-center" id="videoFilePickerID">
+        <form action="/upload" method="post" enctype="multipart/form-data" class="flex f-align-center f-justify-center f-column" id="formMP4">
+            <input type="file" id="videoFile" name="videoFile" accept=".mp4, .avi, .mov, .wmv, .mkv, .flv, .webm" multiple="false">
+            <label for="videoFile">
+                <div class="container">
+                    <div class="upload-box flex f-align-center f-justify-center">
+                        <div style="margin: 16px;border: 2px dashed white;border-radius: 10px;"
+                        class="upload-inner-box flex f-align-center f-justify-center">
+                        <span id="fileName" class="fileNameOption">Choose a video</span>
+                    </div>
+                </div>
+            </div>
+        </label>
+
+        <div class="inputTextLinkComponent flex f-align-center f-justify-center f-wrap">
+            <input type="text" class="inputTextLink w-1" placeholder="Enter video link here" id="VideoLink">
+            <input type="button" value="Submit Link" class="inputTextLink bg-0 cursor-pointer" id="submitLink">
+        </div>
+    </form>
+</div>
+
+    <div class="videoComponent displayNone" id="videoComponentID">
         <div class="titleBar flex f-align-center f-justify-between" id="titleBarID">
-            <div class="firstTitleBarPart f-align-center">
+            <div class="firstTitleBarPart flex f-align-center">
                 <div class="videoTitle" id="videoTitleID">Hello, world!</div>
             </div>
         </div>
 
-        <div class="videoPart">
+        <div class="videoPart" autoplay="" preload="metadata" x-webkit-airplay="allow" webkit-playsinline="true" playsinline="true">
             <video id="myVideo">
-                <source src="https://www.febspot.com/get_file/9/da82c1099c09d247e9e1239e9af44ea7/499000/499072/499072_720p.mp4/?rnd=1690799757486" type="video/mp4">
+                <!-- <source src="https://www.febspot.com/get_file/9/da82c1099c09d247e9e1239e9af44ea7/499000/499072/499072_720p.mp4/?rnd=1690799757486"> -->
             </video>
         </div>
 
@@ -83,6 +106,7 @@
     <script src="js/functions.js"></script>
     <script src="js/script.js"></script>
     <script src="js/volumes.js"></script>
+    <script src="js/videoSrcPicker.js"></script>
     <script src="js/style.js"></script>
 </body>
 

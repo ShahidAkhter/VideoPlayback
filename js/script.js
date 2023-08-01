@@ -1,8 +1,10 @@
+video.addEventListener('loadstart', () => {
+    videoBufferingLoader.classList.add('control_animation')
+});
 
-videoBufferingLoader.classList.add('control_animation')
 video.addEventListener('loadedmetadata', () => {
     videoDuration = video.duration;
-    document.getElementById('videoTitleID').innerText = getVideoName(video);
+    // document.getElementById('videoTitleID').innerText = getVideoName(video);
     durRemainstoWatch.innerText = timeRemainsToEnd(video.currentTime, videoDuration);
     videoBufferingLoader.style.opacity = 0;
     videoBufferingLoader.classList.remove('control_animation')

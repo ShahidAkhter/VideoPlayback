@@ -1,4 +1,7 @@
 // Constants
+const videoFilePicker = document.getElementById('videoFilePickerID');
+const VideoLink = document.getElementById('VideoLink');
+const submitLink = document.getElementById('submitLink');
 const videoComponent = document.getElementById('videoComponentID');
 const videoControls = document.getElementById('videoControlsID');
 const video = document.getElementById('myVideo');
@@ -20,6 +23,7 @@ const volumeSeekID = document.getElementById('volumeSeekID');
 const videoMiddleComponent = document.getElementById('videoMiddleComponent');
 const videoBufferingLoader = document.getElementById('videoBufferingLoader');
 const titleBar = document.getElementById('titleBarID');
+const videoTitle = document.getElementById('videoTitleID');
 
 
 // Variables
