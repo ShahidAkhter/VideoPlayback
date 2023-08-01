@@ -19,7 +19,7 @@ document.getElementById('videoFile').addEventListener('change', function () {
     }
 });
 submitLink.addEventListener('click', function () {
-    if (VideoLink.value=="") {
+    if (VideoLink.value==="") {
         return;
     }
     
