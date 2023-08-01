@@ -1,4 +1,7 @@
 document.getElementById('videoFile').addEventListener('change', function () {
+    if (videoFilePicker.classList.contains('displayNone')) {
+        return;
+    }
     let file = this.files[0];
     if (file) {
         fileName = file.name.split('.')
@@ -19,6 +22,9 @@ document.getElementById('videoFile').addEventListener('change', function () {
     }
 });
 submitLink.addEventListener('click', function () {
+    if (videoFilePicker.classList.contains('displayNone')) {
+        return;
+    }
     if (VideoLink.value === "") {
         return;
     }

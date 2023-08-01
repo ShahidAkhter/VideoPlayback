@@ -12,11 +12,6 @@
     height: 80px;
 }
 
-.control_icons_loader{
-    width: 80px;
-    height: 80px;
-}
-
 .control_animation{
     animation: rotateAnimation 1s infinite linear; /* Animation lasts for 1 seconds and repeats infinitely */
 }

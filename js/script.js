@@ -21,6 +21,9 @@ video.addEventListener('playing', () => {
 })
 
 videoMiddleComponent.addEventListener('click', () => {
+    if (videoComponent.classList.contains('displayNone')) {
+        return;
+    }
     masterPlay.click();
 })
 
@@ -34,19 +37,31 @@ video.addEventListener('timeupdate', () => {
 });
 
 time_backward.addEventListener('click', () => {
+    if (videoComponent.classList.contains('displayNone')) {
+        return;
+    }
     backCurrentTime(video)
 });
 
 time_forward.addEventListener('click', () => {
+    if (videoComponent.classList.contains('displayNone')) {
+        return;
+    }
     forCurrentTime(video)
 });
 
 masterPlay.addEventListener('click', () => {
+    if (videoComponent.classList.contains('displayNone')) {
+        return;
+    }
     masterPlayFunc(video)
 });
 
 
 seek.addEventListener('click', (event) => {
+    if (videoComponent.classList.contains('displayNone')) {
+        return;
+    }
     if (event.target.id == 'indicationVideoRunningPoint') {
         return
     }
@@ -55,6 +70,9 @@ seek.addEventListener('click', (event) => {
 
 screenMode.addEventListener('click', () => {
     try {
+        if (videoComponent.classList.contains('displayNone')) {
+            return;
+        }
         if (isFullScreen) {
             exitFullscreen()
             screenModeImg.src = fullScreenSVG
