@@ -74,7 +74,9 @@ video.addEventListener('contextmenu', (event) => {
 });
 
 window.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' || event.key === 'F11') {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+    } else if (event.key === 'Escape' || event.key === 'F11') {
         event.preventDefault();
         screenMode.click();
     }
