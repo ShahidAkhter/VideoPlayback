@@ -37,3 +37,7 @@
 .videoControlsOpacity {
     opacity: 1 !important;
 }
+
+.cursor-none {
+    cursor: none;
+}

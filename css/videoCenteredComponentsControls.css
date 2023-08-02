@@ -18,12 +18,12 @@
 }
 
 @keyframes rotateAnimation {
-    0% {
+    from {
         transform: rotate(0deg);
         /* Start position, no rotation */
     }
 
-    100% {
+    to {
         transform: rotate(360deg);
         /* End position, 360 degrees rotation */
     }
