@@ -28,14 +28,14 @@ const videoTitle = document.getElementById('videoTitleID');
 
 // Variables
 let videoDuration = 0;
-let timeSkipBackForward=10;
-let isFullScreen=false;
+let timeSkipBackForward = 10;
+let isFullScreen = false;
 
 // image Variables
-let fullScreenSVG='assets\\appImgs\\full_screen.svg'
-let normalScreenSVG='assets\\appImgs\\normal_screen.svg'
-let playSVG='assets\\appImgs\\play-solid.svg'
-let pauseSVG='assets\\appImgs\\pause-solid.svg'
+let fullScreenSVG = 'assets\\appImgs\\full_screen.svg'
+let normalScreenSVG = 'assets\\appImgs\\normal_screen.svg'
+let playSVG = 'assets\\appImgs\\play-solid.svg'
+let pauseSVG = 'assets\\appImgs\\pause-solid.svg'
 
-currentVolume.style.width='100%'
-volIndicatorPos.style.left='99.5%'
+currentVolume.style.width = '100%'
+volIndicatorPos.style.left = '99.5%'

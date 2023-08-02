@@ -1,4 +1,4 @@
-.videoFilePicker{
+.videoFilePicker {
     width: 100vw;
     height: 100vh;
     /* background: linear-gradient(rgb(102, 143, 233),rgb(150, 144, 238)); */
@@ -31,7 +31,7 @@
     font-size: 16px;
 }
 
-#videoFile{
+#videoFile {
     display: none;
 }
 
@@ -43,10 +43,11 @@
     cursor: pointer;
 }
 
-.inputTextLinkComponent{
+.inputTextLinkComponent {
     margin-top: 4px;
 }
-.inputTextLink{
+
+.inputTextLink {
     font-size: 16px;
     margin: 4px;
     border: 1px solid black;

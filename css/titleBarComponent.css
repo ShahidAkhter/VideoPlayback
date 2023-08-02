@@ -1,4 +1,4 @@
-.titleBar{
+.titleBar {
     position: fixed;
     top: 0;
     min-width: 100vw;
@@ -8,13 +8,16 @@
     transition: all 0.2s;
     opacity: 0;
 }
-.videoTitle{
+
+.videoTitle {
     font-size: 22px;
 }
-.firstTitleBarPart{
+
+.firstTitleBarPart {
     margin-left: 80px;
     margin-right: 10px;
 }
-.titleBarOpacity{
+
+.titleBarOpacity {
     opacity: 1 !important;
 }

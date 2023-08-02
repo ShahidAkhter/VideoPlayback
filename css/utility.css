@@ -26,7 +26,7 @@
     flex-direction: column;
 }
 
-.f-wrap{
+.f-wrap {
     flex-wrap: wrap;
 }
 
@@ -55,6 +55,6 @@
     color: white;
 }
 
-.cursor-pointer{
+.cursor-pointer {
     cursor: pointer;
 }

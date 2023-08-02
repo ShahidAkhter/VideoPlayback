@@ -17,25 +17,27 @@
 
 <body>
     <div class="videoFilePicker flex f-align-center f-justify-center" id="videoFilePickerID">
-        <form action="/upload" method="post" enctype="multipart/form-data" class="flex f-align-center f-justify-center f-column" id="formMP4">
-            <input type="file" id="videoFile" name="videoFile" accept=".mp4, .avi, .mov, .wmv, .mkv, .flv, .webm" multiple="false">
+        <form action="/upload" method="post" enctype="multipart/form-data"
+            class="flex f-align-center f-justify-center f-column" id="formMP4">
+            <input type="file" id="videoFile" name="videoFile" accept=".mp4, .avi, .mov, .wmv, .mkv, .flv, .webm"
+                multiple="false">
             <label for="videoFile">
                 <div class="container">
                     <div class="upload-box flex f-align-center f-justify-center">
                         <div style="margin: 16px;border: 2px dashed white;border-radius: 10px;"
-                        class="upload-inner-box flex f-align-center f-justify-center">
-                        <span id="fileName" class="fileNameOption">Choose a video</span>
+                            class="upload-inner-box flex f-align-center f-justify-center">
+                            <span id="fileName" class="fileNameOption">Choose a video</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </label>
+            </label>
 
-        <div class="inputTextLinkComponent flex f-align-center f-justify-center f-wrap">
-            <input type="text" class="inputTextLink w-1" placeholder="Enter video link here" id="VideoLink">
-            <input type="button" value="Submit Link" class="inputTextLink bg-0 cursor-pointer" id="submitLink">
-        </div>
-    </form>
-</div>
+            <div class="inputTextLinkComponent flex f-align-center f-justify-center f-wrap">
+                <input type="text" class="inputTextLink w-1" placeholder="Enter video link here" id="VideoLink">
+                <input type="button" value="Submit Link" class="inputTextLink bg-0 cursor-pointer" id="submitLink">
+            </div>
+        </form>
+    </div>
 
     <div class="videoComponent displayNone" id="videoComponentID">
         <div class="titleBar flex f-align-center f-justify-between" id="titleBarID">
@@ -44,13 +46,14 @@
             </div>
         </div>
 
-        <div class="videoPart" autoplay="" preload="metadata" x-webkit-airplay="allow" webkit-playsinline="true" playsinline="true">
+        <div class="videoPart" autoplay="" preload="metadata" x-webkit-airplay="allow" webkit-playsinline="true"
+            playsinline="true">
             <video id="myVideo"></video>
         </div>
 
         <div class="videoCenteredComponents flex f-align-center f-justify-center" id="videoMiddleComponent">
             <div class="control_icons_loader flex f-align-center f-justify-center" id="videoBufferingLoader"><img
-                src="assets\appImgs\loader.svg" class="control-imgs loader_icons" alt="Loader"></div>
+                    src="assets\appImgs\loader.svg" class="control-imgs loader_icons" alt="Loader"></div>
         </div>
 
         <div class="videoControls flex f-column" id="videoControlsID">
@@ -93,8 +96,8 @@
                 </div>
                 <div class="secondSecondPart">
                     <div class="control_icons flex f-align-center f-justify-center" id="screen_mode"><img
-                        src="assets\appImgs\full_screen.svg" class="control-imgs control-imgs-sm mx-1"
-                        alt="screen_mode"></div>
+                            src="assets\appImgs\full_screen.svg" class="control-imgs control-imgs-sm mx-1"
+                            alt="screen_mode"></div>
                 </div>
             </div>
         </div>
