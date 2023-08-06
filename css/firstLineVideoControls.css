@@ -6,7 +6,7 @@
 
 .seek {
     position: relative;
-    top: 4px;
+    top: -2px;
     min-width: 90vw;
     cursor: pointer;
     padding: 0 14px;
@@ -14,7 +14,8 @@
 
 .currentDur,
 .loadedDur,
-.pitch {
+.pitch,
+.preview {
     position: relative;
     height: 4px;
     border-radius: 20px;
@@ -22,34 +23,42 @@
 
 .currentDur {
     width: 0%;
-    top: 8px;
+    top: 16px;
     background: #095ae5;
-    z-index: 3;
+    z-index: 4;
 }
 
 .loadedDur {
     width: 0%;
-    top: 4px;
+    top: 12px;
     background: rgba(255, 255, 255, 0.4);
+    z-index: 3;
+}
+
+.preview {
+    max-width: 90vw;
+    width: 0%;
+    top: 8px;
+    background: rgba(255, 255, 255, 0.2);
     z-index: 2;
 }
 
 .pitch {
     max-width: 90vw;
-    top: -16px;
+    top: -12px;
     background: rgba(255, 255, 255, 0.2);
     z-index: 1;
 }
 
 .indicatorCurrentDurPos {
     position: relative;
-    top: -6px;
+    top: -2px;
     left: -0.5%;
     width: 16px;
     height: 16px;
     background: #ffffff;
     border-radius: 50%;
-    z-index: 4;
+    z-index: 5;
 }
 
 .durRemains {
@@ -62,20 +71,25 @@
 
 .seek:hover .currentDur,
 .seek:hover .loadedDur,
-.seek:hover .pitch {
+.seek:hover .pitch,
+.seek:hover .preview {
     height: 8px;
 }
 
 .seek:hover .currentDur {
-    top: 16px;
+    top: 28px;
 }
 
 .seek:hover .loadedDur {
-    top: 8px;
+    top: 20px;
+}
+
+.seek:hover .preview {
+    top: 12px;
 }
 
 .seek:hover .pitch {
-    top: -20px;
+    top: -16px;
 }
 
 .seek:hover .indicatorCurrentDurPos {
@@ -84,5 +98,5 @@
 }
 
 .seek:hover {
-    top: 2px;
+    top: -6px;
 }

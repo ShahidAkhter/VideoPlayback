@@ -19,6 +19,9 @@ const getStandardTime = (timerLength) => {
 
 const timeRemainsToEnd = (timerLength, durationOfContent) => {
     let timeRemainsIs = durationOfContent - timerLength;
+    if (timeRemainsIs <= 0) {
+        timeRemainsIs = 0
+    }
     let standardTime = getStandardTime(timeRemainsIs);
     return standardTime;
 }
@@ -44,8 +47,15 @@ function BufferedDuration(videoElement) {
 }
 
 function currentDurationTime(videoElement, currentTime) {
-    currentTiming.style.width = (currentTime / videoDuration) * 100 + '%';
-    seekIndicatorPos.style.left = ((currentTime / videoDuration) * 100) - 0.5 + '%';
+    let currentTimingWidth = (currentTime / videoDuration) * 100;
+    let seekIndicatorPosWidth = (currentTime / videoDuration) * 100 - 0.5;
+
+    currentTimingWidth = Math.max(0, Math.min(100, currentTimingWidth));
+    seekIndicatorPosWidth = Math.max(0, Math.min(99.5, seekIndicatorPosWidth));
+
+
+    currentTiming.style.width = currentTimingWidth + '%';
+    seekIndicatorPos.style.left = seekIndicatorPosWidth + '%';
 }
 
 function backCurrentTime(videoElement) {
@@ -79,6 +89,16 @@ function userEventCurrentDurationTime(event, videoElement, pitch) {
     if (videoElement.ended) {
         masterPlay.src = play;
     }
+}
+function userEventPreviewDurationTime(event, videoElement, pitch) {
+    const progressPercentage = event.offsetX / pitch.clientWidth;
+    const calculatedTime = progressPercentage * videoDuration;
+
+    let previewerWidth = (calculatedTime / videoDuration) * 100;
+
+    previewerWidth = Math.max(0, Math.min(100, previewerWidth));
+
+    previewer.style.width = previewerWidth + '%';
 }
 
 function openFullscreen() {

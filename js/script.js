@@ -3,11 +3,21 @@ video.addEventListener('loadstart', () => {
 });
 
 video.addEventListener('loadedmetadata', () => {
-    videoDuration = video.duration;
-    // document.getElementById('videoTitleID').innerText = getVideoName(video);
-    durRemainstoWatch.innerText = timeRemainsToEnd(video.currentTime, videoDuration);
-    videoBufferingLoader.style.opacity = 0;
-    videoBufferingLoader.classList.remove('control_animation')
+    try {
+        videoDuration = video.duration;
+        // document.getElementById('videoTitleID').innerText = getVideoName(video);
+        durRemainstoWatch.innerText = timeRemainsToEnd(video.currentTime, videoDuration);
+        videoBufferingLoader.style.opacity = 0;
+        videoBufferingLoader.classList.remove('control_animation')
+    } catch (error) {
+        console.log(error)
+    }
+});
+
+video.addEventListener('error', function (event) {
+    if (event.target.error) {
+        console.log('Internal Server Error!');
+    }
 });
 
 video.addEventListener('waiting', () => {
@@ -66,6 +76,20 @@ seek.addEventListener('click', (event) => {
         return
     }
     userEventCurrentDurationTime(event, video, videoPitch)
+});
+
+seek.addEventListener('mousemove', (event) => {
+    if (videoComponent.classList.contains('displayNone')) {
+        return;
+    }
+    userEventPreviewDurationTime(event, video, videoPitch)
+});
+
+seek.addEventListener('mouseleave', (event) => {
+    if (videoComponent.classList.contains('displayNone')) {
+        return;
+    }
+    previewer.style.width = '0%';
 });
 
 screenMode.addEventListener('click', () => {

@@ -1,5 +1,7 @@
 function volumemeter(event, videoElement, pitch) {
-    const calculatedVol = event.offsetX / pitch.clientWidth;
+    let calculatedVol = event.offsetX / pitch.clientWidth;
+
+    calculatedVol = Math.max(0, Math.min(1, calculatedVol));
 
     videoElement.volume = calculatedVol;
 

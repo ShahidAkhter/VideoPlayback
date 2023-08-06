@@ -20,7 +20,7 @@
 
 .volumeSeek {
     position: relative;
-    top: 2px;
+    top: -2px;
     cursor: pointer;
     padding: 0 16px;
     width: 9vw;
@@ -35,5 +35,9 @@
 }
 
 .volumeLoader {
+    width: 0;
+}
+
+.volumePreviewer {
     width: 0;
 }

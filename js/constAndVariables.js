@@ -24,6 +24,7 @@ const videoMiddleComponent = document.getElementById('videoMiddleComponent');
 const videoBufferingLoader = document.getElementById('videoBufferingLoader');
 const titleBar = document.getElementById('titleBarID');
 const videoTitle = document.getElementById('videoTitleID');
+const previewer = document.getElementById('previewer');
 
 
 // Variables
