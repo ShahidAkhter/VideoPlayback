@@ -1,7 +1,10 @@
+.logo img{
+    width: 40vw;
+}
+
 .videoFilePicker {
     width: 100vw;
     height: 100vh;
-    /* background: linear-gradient(rgb(102, 143, 233),rgb(150, 144, 238)); */
     background: rgb(25, 25, 35);
     color: white;
     border-color: white;

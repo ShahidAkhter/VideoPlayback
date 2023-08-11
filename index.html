@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Disney+Hotstar VideoPlayback</title>
-    <link rel="shortcut icon" href="assets/DisneyHotstar.png" type="image/x-icon">
+    <title>DSA Videos</title>
+    <link rel="shortcut icon" href="assets/favicon.jpeg" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/utility.css">
     <link rel="stylesheet" href="css/titleBarComponent.css">
@@ -16,7 +16,10 @@
 </head>
 
 <body>
-    <div class="videoFilePicker flex f-align-center f-justify-center" id="videoFilePickerID">
+    <div class="videoFilePicker flex f-align-center f-justify-center f-column" id="videoFilePickerID">
+        <div class="logo">
+            <img src="assets/logosm.png" alt="logo">
+        </div>
         <form action="/upload" method="post" enctype="multipart/form-data"
             class="flex f-align-center f-justify-center f-column" id="formMP4">
             <input type="file" id="videoFile" name="videoFile" accept=".mp4, .avi, .mov, .wmv, .mkv, .flv, .webm"
@@ -47,8 +50,8 @@
         </div>
 
         <div class="videoPart">
-            <video id="myVideo" autoplay="" preload="metadata" x-webkit-airplay="allow" webkit-playsinline="true"
-            playsinline="true"></video>
+            <video id="myVideo" preload="metadata" x-webkit-airplay="allow" webkit-playsinline="true"
+            playsinline="true" poster="assets/logo.png"></video>
         </div>
 
         <div class="videoCenteredComponents flex f-align-center f-justify-center" id="videoMiddleComponent">
