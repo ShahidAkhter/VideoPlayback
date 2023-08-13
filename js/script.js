@@ -89,6 +89,7 @@ seek.addEventListener('mouseleave', (event) => {
     if (videoComponent.classList.contains('displayNone')) {
         return;
     }
+    previewerTime.style.opacity='0';
     previewer.style.width = '0%';
 });
 

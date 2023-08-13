@@ -25,6 +25,7 @@ const videoBufferingLoader = document.getElementById('videoBufferingLoader');
 const titleBar = document.getElementById('titleBarID');
 const videoTitle = document.getElementById('videoTitleID');
 const previewer = document.getElementById('previewer');
+const previewerTime = document.getElementById('previewerTimeID');
 
 
 // Variables
@@ -40,3 +41,4 @@ let pauseSVG = 'assets\\appImgs\\pause-solid.svg'
 
 currentVolume.style.width = '100%'
 volIndicatorPos.style.left = '99.5%'
+previewerTime.style.opacity='0';

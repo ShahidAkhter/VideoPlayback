@@ -79,7 +79,9 @@ function masterPlayFunc(videoElement) {
 
 function userEventCurrentDurationTime(event, videoElement, pitch) {
     const progressPercentage = event.offsetX / pitch.clientWidth;
-    const calculatedTime = progressPercentage * videoDuration;
+    let calculatedTime = progressPercentage * videoDuration;
+
+    calculatedTime = Math.max(0, Math.min(videoDuration, calculatedTime));
 
     currentDurationTime(videoElement, calculatedTime)
     durRemainstoWatch.innerText = timeRemainsToEnd(calculatedTime, videoDuration);
@@ -92,13 +94,29 @@ function userEventCurrentDurationTime(event, videoElement, pitch) {
 }
 function userEventPreviewDurationTime(event, videoElement, pitch) {
     const progressPercentage = event.offsetX / pitch.clientWidth;
-    const calculatedTime = progressPercentage * videoDuration;
+    let calculatedTime = progressPercentage * videoDuration;
 
+    calculatedTime = Math.max(0, Math.min(videoDuration, calculatedTime));
+    
     let previewerWidth = (calculatedTime / videoDuration) * 100;
-
+    
     previewerWidth = Math.max(0, Math.min(100, previewerWidth));
 
     previewer.style.width = previewerWidth + '%';
+
+    if (event.target.id === 'indicationVideoRunningPoint') {
+        previewerTime.innerText = getStandardTime(videoElement.currentTime);
+        if (parseFloat(seekIndicatorPos.style.left) < 1) {
+            previewerTime.style.left = "2%";
+            return;
+        }
+        previewerTime.style.left = (86 * parseFloat(previewer.style.width) / 100) + (92 * parseFloat(seekIndicatorPos.style.left) / 100) + "%";
+        return;
+    }
+
+    previewerTime.innerText = getStandardTime(calculatedTime);
+    previewerTime.style.left = ((90 * parseFloat(previewer.style.width) / 100) + 1.5) + "%";
+    previewerTime.style.opacity = '1';
 }
 
 function openFullscreen() {

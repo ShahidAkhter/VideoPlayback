@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>DSA Videos</title>
+    <title>DSA VideoPlayer</title>
     <link rel="shortcut icon" href="assets/favicon.jpeg" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/utility.css">
@@ -60,7 +60,10 @@
         </div>
 
         <div class="videoControls flex f-column" id="videoControlsID">
-            <div class="firstLine flex f-align-center f-justify-center">
+            <div class="firstLine flex f-align-center f-justify-center f-column">
+                <div class="previewComponent">
+                    <div class="previewTime" id="previewerTimeID">00:00</div>
+                </div>
                 <div class="seekComponent mx-0 flex f-align-center f-justify-center">
                     <div class="seek flex f-justify-center f-column" id="seekID">
                         <div class="currentDur" id="currentTiming"></div>

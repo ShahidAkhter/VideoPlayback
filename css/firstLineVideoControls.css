@@ -1,3 +1,14 @@
+.previewTime {
+    position: absolute;
+    bottom: 120px;
+}
+
+.previewTime {
+    background: black;
+    border-radius: 4px;
+    padding: 4px;
+}
+
 .seekComponent {
     min-width: 90vw;
     position: relative;
