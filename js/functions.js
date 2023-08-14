@@ -97,9 +97,9 @@ function userEventPreviewDurationTime(event, videoElement, pitch) {
     let calculatedTime = progressPercentage * videoDuration;
 
     calculatedTime = Math.max(0, Math.min(videoDuration, calculatedTime));
-    
+
     let previewerWidth = (calculatedTime / videoDuration) * 100;
-    
+
     previewerWidth = Math.max(0, Math.min(100, previewerWidth));
 
     previewer.style.width = previewerWidth + '%';
@@ -110,7 +110,7 @@ function userEventPreviewDurationTime(event, videoElement, pitch) {
             previewerTime.style.left = "2%";
             return;
         }
-        previewerTime.style.left = (86 * parseFloat(previewer.style.width) / 100) + (92 * parseFloat(seekIndicatorPos.style.left) / 100) + "%";
+        previewerTime.style.left = ((90 * parseFloat(previewer.style.width) / 100) + (94 * parseFloat(seekIndicatorPos.style.left) / 100) - 0.5) + "%";
         return;
     }
 
