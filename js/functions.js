@@ -26,27 +26,11 @@ const timeRemainsToEnd = (timerLength, durationOfContent) => {
     return standardTime;
 }
 
-
-function getVideoName(videoElement) {
-    let videoName = '';
-    let tmpVideoName = videoElement.querySelector("source").getAttribute("src").split("/").pop().split("\\").pop().split(".");
-    tmpVideoName.pop();
-
-    for (let i = 0; i < tmpVideoName.length; i++) {
-        videoName += tmpVideoName[i]
-        if (tmpVideoName[i + 1]) {
-            videoName += '.'
-        }
-    }
-
-    return videoName;
+function BufferedDuration(mediaElement) {
+    loadedDurTime.style.width = (mediaElement.buffered.end(mediaElement.buffered.length - 1) / videoDuration) * 100 + '%';
 }
 
-function BufferedDuration(videoElement) {
-    loadedDurTime.style.width = (videoElement.buffered.end(videoElement.buffered.length - 1) / videoDuration) * 100 + '%';
-}
-
-function currentDurationTime(videoElement, currentTime) {
+function currentDurationTime(mediaElement, currentTime) {
     let currentTimingWidth = (currentTime / videoDuration) * 100;
     let seekIndicatorPosWidth = (currentTime / videoDuration) * 100 - 0.5;
 
@@ -58,41 +42,41 @@ function currentDurationTime(videoElement, currentTime) {
     seekIndicatorPos.style.left = seekIndicatorPosWidth + '%';
 }
 
-function backCurrentTime(videoElement) {
-    videoElement.currentTime -= timeSkipBackForward
+function backCurrentTime(mediaElement, timeToSkip) {
+    mediaElement.currentTime -= timeToSkip
 }
 
-function forCurrentTime(videoElement) {
-    videoElement.currentTime += timeSkipBackForward
+function forCurrentTime(mediaElement, timeToSkip) {
+    mediaElement.currentTime += timeToSkip
 }
 
-function masterPlayFunc(videoElement) {
-    if (videoElement.paused || videoElement.currentTime <= 0) {
-        videoElement.play();
+function masterPlayFunc(mediaElement) {
+    if (mediaElement.paused || mediaElement.currentTime <= 0) {
+        mediaElement.play();
         masterPlay.src = pauseSVG;
     }
     else {
-        videoElement.pause();
+        mediaElement.pause();
         masterPlay.src = playSVG;
     }
 }
 
-function userEventCurrentDurationTime(event, videoElement, pitch) {
+function userEventCurrentDurationTime(event, mediaElement, pitch) {
     const progressPercentage = event.offsetX / pitch.clientWidth;
     let calculatedTime = progressPercentage * videoDuration;
 
     calculatedTime = Math.max(0, Math.min(videoDuration, calculatedTime));
 
-    currentDurationTime(videoElement, calculatedTime)
+    currentDurationTime(mediaElement, calculatedTime)
     durRemainstoWatch.innerText = timeRemainsToEnd(calculatedTime, videoDuration);
     loadedDurTime.style.width = '0%';
 
-    videoElement.currentTime = calculatedTime;
-    if (videoElement.ended) {
+    mediaElement.currentTime = calculatedTime;
+    if (mediaElement.ended) {
         masterPlay.src = play;
     }
 }
-function userEventPreviewDurationTime(event, videoElement, pitch) {
+function userEventPreviewDurationTime(event, mediaElement, pitch) {
     const progressPercentage = event.offsetX / pitch.clientWidth;
     let calculatedTime = progressPercentage * videoDuration;
 
@@ -105,7 +89,7 @@ function userEventPreviewDurationTime(event, videoElement, pitch) {
     previewer.style.width = previewerWidth + '%';
 
     if (event.target.id === 'indicationVideoRunningPoint') {
-        previewerTime.innerText = getStandardTime(videoElement.currentTime);
+        previewerTime.innerText = getStandardTime(mediaElement.currentTime);
         if (parseFloat(seekIndicatorPos.style.left) < 1) {
             previewerTime.style.left = "2%";
             return;

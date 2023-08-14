@@ -50,14 +50,14 @@ time_backward.addEventListener('click', () => {
     if (videoComponent.classList.contains('displayNone')) {
         return;
     }
-    backCurrentTime(video)
+    backCurrentTime(video, timeSkipBackForward)
 });
 
 time_forward.addEventListener('click', () => {
     if (videoComponent.classList.contains('displayNone')) {
         return;
     }
-    forCurrentTime(video)
+    forCurrentTime(video, timeSkipBackForward)
 });
 
 masterPlay.addEventListener('click', () => {
