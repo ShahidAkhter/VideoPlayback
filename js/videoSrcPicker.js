@@ -7,10 +7,11 @@ document.getElementById('videoFile').addEventListener('change', function () {
         fileName = file.name.split('.')
         fileName.pop()
 
-        videoName = ""
-        for (let i = 0; i < fileName.length; i++) {
+        let videoName = ""
+        let fileLength = fileName.length
+        for (let i = 0; i < fileLength; i++) {
             videoName += fileName[i]
-            if (fileName[i + 1]) {
+            if (i < (fileLength - 1)) {
                 videoName += '.'
             }
         }
@@ -21,6 +22,7 @@ document.getElementById('videoFile').addEventListener('change', function () {
         videoFilePicker.classList.add('displayNone');
     }
 });
+
 submitLink.addEventListener('click', function () {
     if (videoFilePicker.classList.contains('displayNone')) {
         return;
