@@ -4,13 +4,13 @@ document.getElementById('videoFile').addEventListener('change', function () {
     }
     let file = this.files[0];
     if (file) {
-        fileName = file.name.split('.')
-        fileName.pop()
+        let fileNameIs = file.name.split('.')
+        fileNameIs.pop()
 
         let videoName = ""
-        let fileLength = fileName.length
+        let fileLength = fileNameIs.length
         for (let i = 0; i < fileLength; i++) {
-            videoName += fileName[i]
+            videoName += fileNameIs[i]
             if (i < (fileLength - 1)) {
                 videoName += '.'
             }
