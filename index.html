@@ -39,6 +39,11 @@
                 <input type="text" class="inputTextLink w-1" placeholder="Enter video link here" id="VideoLink">
                 <input type="button" value="Submit Link" class="inputTextLink bg-0 cursor-pointer" id="submitLink">
             </div>
+
+            <div class="closeFilePickerComponent displayNone" id="closeFilePickerComponentID">
+                <div class="flex f-align-center f-justify-center" id="closeFilePicker"><img
+                    src="assets\appImgs\xmark.svg" class="control-imgs" alt="Close"></div>
+            </div>
         </form>
     </div>
 
@@ -50,8 +55,8 @@
         </div>
 
         <div class="videoPart">
-            <video id="myVideo" preload="metadata" x-webkit-airplay="allow" webkit-playsinline="true"
-            playsinline="true" poster="assets/logo.png"></video>
+            <video id="myVideo" preload="metadata" x-webkit-airplay="allow" webkit-playsinline="true" playsinline="true"
+                poster="assets/logo.png"></video>
         </div>
 
         <div class="videoCenteredComponents flex f-align-center f-justify-center" id="videoMiddleComponent">
@@ -104,9 +109,12 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-                <div class="secondSecondPart">
+
+                <div class="secondSecondPart flex">
+                    <div class="control_icons flex f-align-center f-justify-center" id="file_repicker"><img
+                            src="assets\appImgs\file_icon.svg" class="control-imgs control-imgs-sm mx-1"
+                            alt="Pick New file"></div>
                     <div class="control_icons flex f-align-center f-justify-center" id="screen_mode"><img
                             src="assets\appImgs\full_screen.svg" class="control-imgs control-imgs-sm mx-1"
                             alt="screen_mode"></div>

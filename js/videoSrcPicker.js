@@ -17,9 +17,13 @@ document.getElementById('videoFile').addEventListener('change', function () {
         }
 
         videoTitle.innerText = videoName;
+
         video.src = URL.createObjectURL(file);
         videoComponent.classList.remove('displayNone');
         videoFilePicker.classList.add('displayNone');
+        closeFilePickerComponent.classList.add('displayNone');
+        document.getElementById('videoFile').value = "";
+        errorState = false;
     }
 });
 
@@ -32,7 +36,36 @@ submitLink.addEventListener('click', function () {
     }
 
     videoTitle.innerText = '';
-    video.src = VideoLink.value;
+    if (errorState || video.src !== VideoLink.value) {
+        video.src = VideoLink.value;
+    }
+
     videoComponent.classList.remove('displayNone');
     videoFilePicker.classList.add('displayNone');
+    closeFilePickerComponent.classList.remove('displayNone');
+    errorState = false;
+});
+
+fileRepicker.addEventListener('click', function () {
+    if (!video.paused || masterPlay.src === pauseSVG) {
+        masterPlay.click();
+    }
+    if (isFullScreen) {
+        exitFullscreen()
+        screenModeImg.src = fullScreenSVG
+        isFullScreen = false
+    }
+    videoComponent.classList.add('displayNone');
+    videoFilePicker.classList.remove('displayNone');
+    closeFilePickerComponent.classList.remove('displayNone');
+    errorComponent.classList.add('error')
+});
+
+closeFilePicker.addEventListener('click', function () {
+    if (!video.src || errorState) {
+        return;
+    }
+    videoComponent.classList.remove('displayNone');
+    videoFilePicker.classList.add('displayNone');
+    errorState = false;
 });

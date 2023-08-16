@@ -28,12 +28,16 @@ const previewer = document.getElementById('previewer');
 const previewerTime = document.getElementById('previewerTimeID');
 const errorComponent = document.getElementById('errorComponentID');
 const errorsConetentComponent = document.getElementById('errorsID');
+const fileRepicker = document.getElementById('file_repicker');
+const closeFilePicker = document.getElementById('closeFilePicker');
+const closeFilePickerComponent = document.getElementById('closeFilePickerComponentID');
 
 
 // Variables
 let videoDuration = 0;
 let timeSkipBackForward = 10;
 let isFullScreen = false;
+let errorState=false;
 
 // image Variables
 let fullScreenSVG = 'assets\\appImgs\\full_screen.svg'

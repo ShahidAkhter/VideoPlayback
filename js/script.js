@@ -22,6 +22,7 @@ video.addEventListener('error', function (event) {
 
         errorsConetentComponent.innerText = event.target.error.message;
         errorComponent.classList.remove('displayNone');
+        errorState=true;
     }
 });
 

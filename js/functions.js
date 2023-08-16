@@ -27,7 +27,11 @@ const timeRemainsToEnd = (timerLength, durationOfContent) => {
 }
 
 function BufferedDuration(mediaElement) {
-    loadedDurTime.style.width = (mediaElement.buffered.end(mediaElement.buffered.length - 1) / videoDuration) * 100 + '%';
+    try {
+        loadedDurTime.style.width = (mediaElement.buffered.end(mediaElement.buffered.length - 1) / videoDuration) * 100 + '%';
+    } catch (error) {
+        // console.log("Some Error Occured " + error)
+    }
 }
 
 function currentDurationTime(mediaElement, currentTime) {
