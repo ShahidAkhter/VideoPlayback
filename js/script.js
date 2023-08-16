@@ -1,14 +1,15 @@
 video.addEventListener('loadstart', () => {
     videoBufferingLoader.classList.add('control_animation')
+    errorComponent.classList.add('displayNone');
 });
 
 video.addEventListener('loadedmetadata', () => {
     try {
         videoDuration = video.duration;
-        // document.getElementById('videoTitleID').innerText = getVideoName(video);
         durRemainstoWatch.innerText = timeRemainsToEnd(video.currentTime, videoDuration);
         videoBufferingLoader.style.opacity = 0;
         videoBufferingLoader.classList.remove('control_animation')
+        errorComponent.classList.add('displayNone');
     } catch (error) {
         console.log(error)
     }
@@ -16,22 +17,37 @@ video.addEventListener('loadedmetadata', () => {
 
 video.addEventListener('error', function (event) {
     if (event.target.error) {
-        console.log('Internal Server Error!');
+        videoBufferingLoader.style.opacity = 0;
+        videoBufferingLoader.classList.remove('control_animation')
+
+        errorsConetentComponent.innerText = event.target.error.message;
+        errorComponent.classList.remove('displayNone');
     }
 });
 
 video.addEventListener('waiting', () => {
+    if (!errorComponent.classList.contains('displayNone')) {
+        return;
+    }
     videoBufferingLoader.classList.add('control_animation')
+    errorComponent.classList.add('displayNone');
     videoBufferingLoader.style.opacity = 1;
 })
 
 video.addEventListener('playing', () => {
+    if (!errorComponent.classList.contains('displayNone')) {
+        return;
+    }
     videoBufferingLoader.style.opacity = 0;
     videoBufferingLoader.classList.remove('control_animation')
+    errorComponent.classList.add('displayNone');
 })
 
 videoMiddleComponent.addEventListener('click', () => {
     if (videoComponent.classList.contains('displayNone')) {
+        return;
+    }
+    if (!errorComponent.classList.contains('displayNone')) {
         return;
     }
     masterPlay.click();
@@ -89,7 +105,7 @@ seek.addEventListener('mouseleave', (event) => {
     if (videoComponent.classList.contains('displayNone')) {
         return;
     }
-    previewerTime.style.opacity='0';
+    previewerTime.style.opacity = '0';
     previewer.style.width = '0%';
 });
 

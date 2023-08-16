@@ -26,6 +26,8 @@ const titleBar = document.getElementById('titleBarID');
 const videoTitle = document.getElementById('videoTitleID');
 const previewer = document.getElementById('previewer');
 const previewerTime = document.getElementById('previewerTimeID');
+const errorComponent = document.getElementById('errorComponentID');
+const errorsConetentComponent = document.getElementById('errorsID');
 
 
 // Variables
