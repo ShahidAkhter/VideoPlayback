@@ -21,8 +21,11 @@ video.addEventListener('error', function (event) {
         videoBufferingLoader.classList.remove('control_animation')
 
         errorsConetentComponent.innerText = event.target.error.message;
+        if (errorsConetentComponent.innerText === "") {
+            errorsConetentComponent.innerText = "Internal Server Error";
+        }
         errorComponent.classList.remove('displayNone');
-        errorState=true;
+        errorState = true;
     }
 });
 
